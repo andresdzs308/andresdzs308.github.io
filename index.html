@@ -260,6 +260,69 @@
           </div><a class="button button-lg button-primary-gradient wow fadeIn" data-wow-delay=".2s" href="#"><span>Ver todos los temas</span></a>
         </div>
       </section>
+      <!---aaaa código--->
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <section class="section section-lg bg-gray-100">
+         <style>
+            pre {
+              background-color: #f7f7f7;
+              border: 1px solid #ddd;
+              padding: 10px;
+              overflow-x: auto;
+            }
+
+            code {
+              font-size: 14px;
+              font-family: "Courier New", Courier, monospace;
+            }
+         </style>
+    <div class="container">
+      <div class="row row-50 justify-content-center justify-content-lg-between">
+        <div class="col-12">
+          <h3 class="h-custom-1 f1">Investigación de Operaciones</h3>
+        </div>
+        <div class="col-md-6 col-lg-5 col-xl-3 wow fadeIn">
+          <p>Este es un ejemplo de código para resolver un problema de programación lineal utilizando CVXPY. </p>
+          <p>Minimizar &3*x + 8*y& sujeto a: </p>
+          <p>$x + y >= 50$</p>
+          <p>$x - y <= 20$</p>
+          <p>$x >= 0$</p>
+          <p>$y >= 0$</p>
+        </div>
+        <div class="col-md-6 col-xl-9 wow fadeIn" data-wow-delay=".2s">
+          <div class="code-container">
+            <pre><code>
+  import cvxpy as cp
+
+  x = cp.Variable()
+  y = cp.Variable()
+
+  constraints = [x + y >= 50, x - y <= 20, x >= 0, y >= 0]
+  obj = cp.Minimize(3*x + 8*y)
+  prob = cp.Problem(obj, constraints)
+
+  # Resolver utilizando el solver ECOS
+  prob.solve(solver=cp.ECOS)
+  print("Valor óptimo con ECOS:", prob.value)
+  print("Solución óptima con ECOS:")
+  print("x =", x.value)
+  print("y =", y.value)
+
+  # Resolver utilizando el solver SCS
+  prob.solve(solver=cp.SCS)
+  print("Valor óptimo con SCS:", prob.value)
+  print("Solución óptima con SCS:")
+  print("x =", x.value)
+  print("y =", y.value)
+            </code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+      
+      
       <!-- Latest Blog Posts-->
       <section class="section section-lg bg-default text-center">
         <div class="container">
@@ -326,48 +389,6 @@
             </div></a>
         </div>
       </section>
-    
-      <section class="section section-lg bg-gray-100">
-    <div class="container">
-      <div class="row row-50 justify-content-center justify-content-lg-between">
-        <div class="col-12">
-          <h3 class="h-custom-1 f1">Investigación de Operaciones</h3>
-        </div>
-        <div class="col-md-6 col-lg-5 col-xl-3 wow fadeIn">
-          <p>Este es un ejemplo de código para resolver un problema de programación lineal utilizando CVXPY.</p>
-        </div>
-        <div class="col-md-6 col-xl-9 wow fadeIn" data-wow-delay=".2s">
-          <div class="code-container">
-            <pre><code>
-  import cvxpy as cp
-
-  x = cp.Variable()
-  y = cp.Variable()
-
-  constraints = [x + y >= 50, x - y <= 20, x >= 0, y >= 0]
-  obj = cp.Minimize(3*x + 8*y)
-  prob = cp.Problem(obj, constraints)
-
-  # Resolver utilizando el solver ECOS
-  prob.solve(solver=cp.ECOS)
-  print("Valor óptimo con ECOS:", prob.value)
-  print("Solución óptima con ECOS:")
-  print("x =", x.value)
-  print("y =", y.value)
-
-  # Resolver utilizando el solver SCS
-  prob.solve(solver=cp.SCS)
-  print("Valor óptimo con SCS:", prob.value)
-  print("Solución óptima con SCS:")
-  print("x =", x.value)
-  print("y =", y.value)
-            </code></pre>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
       <footer class="section footer-classic bg-gray-950">
         <div class="footer-classic-main">
           <div class="container"> 
